@@ -35,3 +35,13 @@ export const updatePassValidationSchema = Yup.object().shape({
     .required('Majburiy'),
     code: Yup.string().required().trim(),
 })
+
+export const ServiceValidationSchema = Yup.object().shape({
+    name: Yup.string()
+      .min(2, "Kamida ikkita so'zdan iborat bo'lishi shart")
+      .max(30)
+      .required("Majburiy"),
+    price: Yup.number().required("Majburiy").min(0, "Minimal narxi 0"),
+  });
+
+  
